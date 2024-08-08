@@ -1,10 +1,9 @@
+#' @importFrom cli cat_line rule
 #' @importFrom fs file_size
 #' @importFrom utils file_test capture.output
 #' @importFrom tools pkgVignettes vignetteEngine vignetteInfo file_path_sans_ext file_ext
 #' @importFrom yaml write_yaml
 pkgdown_shim_vignettes <- function(path = ".", ...) {
-  rule <- import_from("pkgdown", "rule")
-  cat_line <- import_from("pkgdown", "cat_line")
   src_path <- import_from("pkgdown", "src_path")
   dst_path <- import_from("pkgdown", "dst_path")
   get_vignette_metadata <- import_from("tools", ".get_vignette_metadata")
@@ -104,10 +103,10 @@ pkgdown_shim_vignettes <- function(path = ".", ...) {
 
 
 # Turn an R.rsp::rsp *.md.rsp vignette into an Rmarkdown *.Rmd vignette
+#' @importFrom cli cat_line
 #' @importFrom tools file_path_sans_ext file_ext
 #' @importFrom yaml write_yaml
 Rmd_shim_md_rsp <- function(file, yaml, engine) {
-  cat_line <- import_from("pkgdown", "cat_line")
   src_path <- import_from("pkgdown", "src_path")
   dst_path <- import_from("pkgdown", "dst_path")
   
@@ -179,10 +178,10 @@ Rmd_shim_md_rsp <- function(file, yaml, engine) {
 
 # Turn an *::selfonly *.md vignette into an Rmarkdown *.Rmd vignette
 # Examples: startup::selfonly and progressr::selfonly
+#' @importFrom cli cat_line
 #' @importFrom tools file_path_sans_ext file_ext
 #' @importFrom yaml write_yaml
 Rmd_shim_selfonly <- function(file, yaml, engine) {
-  cat_line <- import_from("pkgdown", "cat_line")
   src_path <- import_from("pkgdown", "src_path")
   dst_path <- import_from("pkgdown", "dst_path")
   
@@ -216,10 +215,10 @@ Rmd_shim_selfonly <- function(file, yaml, engine) {
 
 # Turn an vignette and its product into an Rmarkdown *.Rmd vignette
 # Currently only PDFs are supported. HTML produces is on the to-do list.
+#' @importFrom cli cat_line
 #' @importFrom tools file_path_sans_ext file_ext texi2pdf
 #' @importFrom yaml write_yaml
 Rmd_shim_generic <- function(file, yaml, engine) {
-  cat_line <- import_from("pkgdown", "cat_line")
   src_path <- import_from("pkgdown", "src_path")
   dst_path <- import_from("pkgdown", "dst_path")
   find_vignette_product <- import_from("tools", "find_vignette_product")

@@ -14,6 +14,7 @@
 #'
 #' @returns Nothing.
 #'
+#' @importFrom cli cat_line rule
 #' @importFrom desc desc_get_field
 #' @importFrom pkgbuild build
 #' @importFrom utils file_test untar packageVersion
@@ -21,8 +22,6 @@
 #' @importFrom yaml read_yaml write_yaml
 #' @export
 build_site <- function(pkg = ".", ..., github = TRUE, preview = NA) {
-  rule <- import_from("pkgdown", "rule")
-  cat_line <- import_from("pkgdown", "cat_line")
   src_path <- import_from("pkgdown", "src_path")
   dst_path <- import_from("pkgdown", "dst_path")
   build_github_pages <- import_from("pkgdown", "build_github_pages")
