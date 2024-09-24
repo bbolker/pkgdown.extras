@@ -13,14 +13,13 @@
 #'
 #' @returns The path to \file{_pkgdown.yml}, or NULL.
 #'
+#' @importFrom cli cat_line
 #' @importFrom R.rsp rfile
 #' @importFrom utils file_test
 #' @importFrom tools file_path_sans_ext
 #' @importFrom yaml read_yaml
 #' @export
 build_pkgdown_yml <- function(pkg = ".", path = "pkgdown/_pkgdown.yml.rsp", validate = TRUE) {
-  rule <- import_from("pkgdown", "rule")
-  cat_line <- import_from("pkgdown", "cat_line")
   src_path <- import_from("pkgdown", "src_path")
   dst_path <- import_from("pkgdown", "dst_path")
   
